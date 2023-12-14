@@ -19,57 +19,23 @@
  *   getStringLength(null) => 0
  *   getStringLength(undefined) => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  return value.length;
 }
 
-/**
- * Returns true if the value is a string, otherwise returns false.
- *
- * @param {string} value - The value to check if it's a string.
- * @return {boolean} - True if the value is a string, false otherwise.
- *
- * @example
- *   isString() => false
- *   isString(null) => false
- *   isString([]) => false
- *   isString({}) => false
- *   isString('test') => true
- *   isString(new String('test')) => true
- */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  if (typeof value === 'string' || value instanceof String) {
+    return true;
+  }
+  return false;
 }
 
-/**
- * Returns the result of concatenation of two strings.
- *
- * @param {string} value1 - The first string to concatenate.
- * @param {string} value2 - The second string to concatenate.
- * @return {string} - The concatenated string.
- *
- * @example
- *   concatenateStrings('aa', 'bb') => 'aabb'
- *   concatenateStrings('aa', '') => 'aa'.
- *   concatenateStrings('', 'bb') => 'bb'
- */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {
+  return value1.concat(value2);
 }
 
-/**
- * Returns the first character of the given string.
- *
- * @param {string} value - The input string to extract the first character from.
- * @return {string} - The first character of the string.
- *
- * @example
- *   getFirstChar('John Doe') => 'J'
- *   getFirstChar('cat') => 'c'
- *   getFirstChar('') => ''
- */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(value) {
+  return value.charAt(0);
 }
 
 /**
