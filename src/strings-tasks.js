@@ -87,7 +87,8 @@ function removeTrailingWhitespaces(/* value */) {
  *   repeatString('abc', -2) => ''
  */
 function repeatString(str, times) {
-  return str.repeat(times);
+  const n = str.repeat(times);
+  return n;
 }
 
 function removeFirstOccurrences(str, value) {
@@ -143,37 +144,15 @@ function reverseString(str) {
   return join;
 }
 
-/**
- * Returns a string with characters in alphabetical order.
- *
- * @param {string} str - The input string.
- * @return {string} - The string in alphabetical order.
- *
- * @example:
- *   orderAlphabetically('webmaster') => 'abeemrstw'
- *   orderAlphabetically('textbook') => 'bekoottx'
- *   orderAlphabetically('abc123xyz') => '123abcxyz'
- */
 function orderAlphabetically(str) {
   const split = str.split('');
   const sort = split.sort();
   const join = sort.join('');
   return join;
 }
-/**
- * Checks if a given string contains a specified substring.
- *
- * @param {string} str - The input string to search within.
- * @param {string} substring - The substring to check for in the input string.
- * @returns {boolean} - True if the input string contains the specified substring, false otherwise.
- *
- * @example
- *   containsSubstring('Hello, World!', 'World') => true
- *   containsSubstring('JavaScript is Fun', 'Python') => false
- *   containsSubstring('12345', '34') => true
- */
-function containsSubstring(/* str, substring */) {
-  throw new Error('Not implemented');
+
+function containsSubstring(str, substring) {
+  return str.includes(substring);
 }
 
 /**
@@ -365,8 +344,10 @@ function encodeToRot13(/* str */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  return value.replace(/[a-z]/gi, (letter) => output[input.indexOf(letter)]);
 }
 
 module.exports = {
